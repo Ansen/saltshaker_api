@@ -39,6 +39,7 @@ class DB(object):
                 db=self.db,
                 charset=self.charset
             )
+            conn.ping(reconnect=True)
             conn.autocommit(False)
             cursor = conn.cursor()
             return conn, cursor
